@@ -47,7 +47,7 @@ The repository includes an automated test suite executed via **GitHub Actions** 
 Run tests locally:
 ```bash
 python -m pytest tests/ -v
-
+```
 
 ## Repo contents
 
