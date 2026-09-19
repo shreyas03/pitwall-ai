@@ -1,5 +1,5 @@
 # Pitwall AI
-
+[![CI Pipeline](https://github.com/shreyas03/pitwall-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/shreyas03/pitwall-ai/actions/workflows/ci.yml)
 A multi-agent system that answers Formula 1 questions by writing and running real Python code against a local SQLite database, instead of generating answers from a model's memory. Built with Microsoft's AutoGen (ag2) framework and GPT-4o-mini.
 
 ## The problem it solves
