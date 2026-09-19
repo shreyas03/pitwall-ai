@@ -37,10 +37,24 @@ python pitwall.py
 
 You'll be prompted for a question. The Race Engineer will write and propose a script; you (as Team Principal) approve execution, and the terminal output gets fed back into the conversation for the final answer.
 
+## Testing & CI/CD
+
+The repository includes an automated test suite executed via **GitHub Actions** across Python 3.11 and 3.12:
+
+- **Unit Testing (`pytest`):** Validates local SQLite schema integrity and leverages `unittest.mock` to test Ergast API response parsing, pandas DataFrame normalization, and network exception handling without live HTTP dependencies.
+- **Static Analysis (`ruff`):** Automatically checks code formatting, syntax integrity, and unused imports on every pull request and push to `main`.
+
+Run tests locally:
+```bash
+python -m pytest tests/ -v
+
+
 ## Repo contents
 
 - `pitwall.py` — agent definitions and the AutoGen conversation loop
 - `f1_data_fetcher.py` — standalone helper for fetching live standings from the Ergast API
 - `Formula1.sqlite` — local F1 database (1950–2017)
+- `tests/` — automated unit and mocked API test suites
+- `.github/workflows/ci.yml` — automated CI/CD pipeline definition
 - `requirements.txt`
 - `.env.example` — template for the required `OPENAI_API_KEY`
